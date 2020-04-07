@@ -1,0 +1,48 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item">
+      <img alt="LibreRoll" src="../../assets/brand.png">
+    </a>
+
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" (click)="menuToggle()">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="mainNavMenu" class="navbar-menu" [class.is-active]="menuOpen">
+    <div class="navbar-start">
+      <a class="navbar-item">
+        <span class="icon">
+          <fa-icon [icon]="faHome"></fa-icon>
+        </span>
+        <span>
+          Home
+        </span>
+      </a>
+      <a class="navbar-item">
+        <span>
+          <fa-icon [icon]="faScroll"></fa-icon>
+        </span>
+        <span>
+          Character Sheets
+        </span>
+      </a>
+      <a class="navbar-item">
+        <span class="icon">
+          <fa-icon [icon]="faD20"></fa-icon>
+        </span>
+        <span>
+          Games
+        </span>
+      </a>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <app-navbar-user></app-navbar-user>
+      </div>
+    </div>
+  </div>
+</nav>

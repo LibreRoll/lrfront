@@ -1,0 +1,16 @@
+<div class="modal" [class.is-active]="modals.modal('login')">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <div class="box">
+      <form>
+        <div class="field">
+          <label class="label">Username</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="Username">
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <button class="modal-close is-large" aria-label="close" (click)="modals.closeModal()"></button>
+</div>
