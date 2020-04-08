@@ -1,4 +1,17 @@
-<div class="buttons">
-  <a class="button is-primary">Sign Up</a>
+<div class="buttons" *ngIf="!auth.loggedIn">
   <a class="button" (click)="openLogInModal()">Log In</a>
+  <a class="button is-dark">Sign Up</a>
+</div>
+<div class="buttons" *ngIf="auth.loggedIn">
+  <a class="button">
+    <span class="icon">
+      <fa-icon [icon]="faUser"></fa-icon>
+    </span>
+    <span>Profile</span>
+  </a>
+  <a class="button is-dark" [class.is-loading]="loggingOut" (click)="logOut()">
+    <span class="icon">
+      <fa-icon [icon]="faSignOut"></fa-icon>
+    </span>
+  </a>
 </div>
