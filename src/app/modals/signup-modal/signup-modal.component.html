@@ -2,7 +2,7 @@
   <div class="modal-background"></div>
   <div class="modal-content">
     <div class="box">
-      <form (ngSubmit)="logIn()">
+      <form (ngSubmit)="singUp()" *ngIf="!signedUp">
         <div class="field">
           <label class="label">Username</label>
           <div class="control has-icons-left">
@@ -24,12 +24,27 @@
         </div>
 
         <div class="field">
+          <label class="label">Repeat Password</label>
+          <div class="control has-icons-left">
+            <span class="icon is-small is-left">
+              <fa-icon [icon]="faLock"></fa-icon>
+            </span>
+            <input name="repeatPassword" [(ngModel)]="repeatPassword" class="input" type="password">
+          </div>
+        </div>
+
+        <div class="field">
           <div class="control">
-            <button name="submit" type="submit" class="button is-dark" [class.is-loading]="loginInProgress">Log In</button>
+            <button name="submit" type="submit" class="button is-dark" [class.is-loading]="signUpInProgress">Sign Up
+            </button>
           </div>
         </div>
       </form>
+      <div class="content" *ngIf="signedUp">
+        <p class="title">You had successfully registered!</p>
+        <button class="button" (click)="goToLogIn()">Log In</button>
+      </div>
     </div>
   </div>
-  <button class="modal-close is-large" aria-label="close" (click)="modals.closeModal()"></button>
+  <button class="modal-close is-large" aria-label="close" (click)="close()"></button>
 </div>

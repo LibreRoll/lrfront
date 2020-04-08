@@ -28,4 +28,8 @@ export class AuthService {
       this.hLoggedIn = false;
     });
   }
+
+  public async signUp(user, password) {
+    return wait(2000);
+  }
 }

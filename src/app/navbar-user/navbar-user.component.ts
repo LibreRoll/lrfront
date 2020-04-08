@@ -24,6 +24,10 @@ export class NavbarUserComponent implements OnInit {
     this.modals.openModal('login');
   }
 
+  openSignUpModal(): void {
+    this.modals.openModal('signup');
+  }
+
   logOut(): void {
     this.loggingOut = true;
     this.auth.logOut().finally(() => this.loggingOut = false);

@@ -28,8 +28,6 @@ export class UserModalComponent implements OnInit {
       .then(
         () => {
           this.modals.closeModal();
-          this.username = '';
-          this.password = '';
         }
       )
       .catch()

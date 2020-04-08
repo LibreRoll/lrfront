@@ -1,6 +1,6 @@
 <div class="buttons" *ngIf="!auth.loggedIn">
   <a class="button" (click)="openLogInModal()">Log In</a>
-  <a class="button is-dark">Sign Up</a>
+  <a class="button is-dark" (click)="openSignUpModal()">Sign Up</a>
 </div>
 <div class="buttons" *ngIf="auth.loggedIn">
   <a class="button">

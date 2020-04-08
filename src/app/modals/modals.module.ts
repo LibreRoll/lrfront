@@ -5,11 +5,12 @@ import {ModalService} from './modal.service';
 import { UserModalComponent } from './user-modal/user-modal.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {FormsModule} from '@angular/forms';
+import { SignupModalComponent } from './signup-modal/signup-modal.component';
 
 
 
 @NgModule({
-  declarations: [ModalsComponent, UserModalComponent],
+  declarations: [ModalsComponent, UserModalComponent, SignupModalComponent],
   imports: [
     CommonModule,
     FontAwesomeModule,

@@ -1,1 +1,2 @@
-<app-user-modal></app-user-modal>
+<app-user-modal *ngIf="modals.modal('login')"></app-user-modal>
+<app-signup-modal *ngIf="modals.modal('signup')"></app-signup-modal>
