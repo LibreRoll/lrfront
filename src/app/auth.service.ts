@@ -23,7 +23,7 @@ export class AuthService {
     });
   }
 
-  public async logOut(user, password) {
+  public async logOut() {
     return wait(2000).then(() => {
       this.hLoggedIn = false;
     });
