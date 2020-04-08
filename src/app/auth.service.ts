@@ -15,11 +15,14 @@ export class AuthService {
     return this.hLoggedIn;
   }
 
-  public logIn(user, password) {
-    this.hLoggedIn = true;
+  public async logIn(user, password) {
+    const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
+    return wait(2000).then(() => {
+      this.hLoggedIn = true;
+    });
   }
 
-  public logOut(user, password) {
+  public async logOut(user, password) {
     this.hLoggedIn = false;
   }
 }

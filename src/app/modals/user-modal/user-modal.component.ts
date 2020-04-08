@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ModalService} from '../modal.service';
+import {faUser, faLock} from '@fortawesome/free-solid-svg-icons';
+import {AuthService} from '../../auth.service';
 
 @Component({
   selector: 'app-user-modal',
@@ -8,9 +10,30 @@ import {ModalService} from '../modal.service';
 })
 export class UserModalComponent implements OnInit {
 
-  constructor(public modals: ModalService) { }
+  faUser = faUser;
+  faLock = faLock;
+  loginInProgress = false;
+  username: string;
+  password: string;
+
+  constructor(public modals: ModalService, private auth: AuthService) {
+  }
 
   ngOnInit(): void {
+  }
+
+  logIn(): void {
+    this.loginInProgress = true;
+    this.auth.logIn(this.username, this.password)
+      .then(
+        () => {
+          this.modals.closeModal();
+          this.username = '';
+          this.password = '';
+        }
+      )
+      .catch()
+      .finally(() => this.loginInProgress = false);
   }
 
 }

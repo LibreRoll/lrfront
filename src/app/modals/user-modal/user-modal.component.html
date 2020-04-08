@@ -2,11 +2,30 @@
   <div class="modal-background"></div>
   <div class="modal-content">
     <div class="box">
-      <form>
+      <form (ngSubmit)="logIn()">
         <div class="field">
           <label class="label">Username</label>
+          <div class="control has-icons-left">
+            <span class="icon is-small is-left">
+              <fa-icon [icon]="faUser"></fa-icon>
+            </span>
+            <input name="username" [(ngModel)]="username" class="input" type="text">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Password</label>
+          <div class="control has-icons-left">
+            <span class="icon is-small is-left">
+              <fa-icon [icon]="faLock"></fa-icon>
+            </span>
+            <input name="password" [(ngModel)]="password" class="input" type="password">
+          </div>
+        </div>
+
+        <div class="field">
           <div class="control">
-            <input class="input" type="text" placeholder="Username">
+            <button name="submit" type="submit" class="button is-link" [class.is-loading]="loginInProgress">Log In</button>
           </div>
         </div>
       </form>
