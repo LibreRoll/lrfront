@@ -1,4 +1,5 @@
 import {Injectable} from '@angular/core';
+import {Router} from '@angular/router';
 
 const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -10,7 +11,7 @@ export class AuthService {
   private hLoggedIn = false;
 
 
-  constructor() {
+  constructor(public router: Router) {
   }
 
   get loggedIn() {
@@ -26,6 +27,7 @@ export class AuthService {
   public async logOut() {
     return wait(2000).then(() => {
       this.hLoggedIn = false;
+      this.router.navigate(['/home']);
     });
   }
 

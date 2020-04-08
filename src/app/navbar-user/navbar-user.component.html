@@ -3,7 +3,7 @@
   <a class="button is-dark" (click)="openSignUpModal()">Sign Up</a>
 </div>
 <div class="buttons" *ngIf="auth.loggedIn">
-  <a class="button">
+  <a class="button" routerLink="/profile">
     <span class="icon">
       <fa-icon [icon]="faUser"></fa-icon>
     </span>
