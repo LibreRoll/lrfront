@@ -41,5 +41,4 @@ export class SignupModalComponent implements OnInit {
   close(): void {
     this.modals.closeModal();
   }
-
 }
