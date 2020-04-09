@@ -10,8 +10,7 @@ import {PageMainComponent} from './page-main/page-main.component';
 import {RouterModule, Routes} from '@angular/router';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/home', pathMatch: 'full'},
-  {path: 'home', component: PageMainComponent},
+  {path: '', component: PageMainComponent, pathMatch: 'full'},
   {path: 'profile', loadChildren: () => import('src/app/page-profile/page-profile.module').then(m => m.PageProfileModule)}
 ];
 

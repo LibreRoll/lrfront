@@ -27,11 +27,18 @@ export class AuthService {
   public async logOut() {
     return wait(2000).then(() => {
       this.hLoggedIn = false;
-      this.router.navigate(['/home']);
+      this.router.navigate(['/']);
     });
   }
 
   public async signUp(user, password) {
     return wait(2000);
+  }
+
+  public getUsername(): string {
+    if (this.loggedIn) {
+      return 'Test User';
+    }
+    return null;
   }
 }
